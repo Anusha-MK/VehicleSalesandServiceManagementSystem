@@ -1,0 +1,24 @@
+<app-header></app-header>
+<br><br>
+
+
+<div class="bg-dark">
+    <br><br>
+<div class="container border bg-light text-center p-5 col-8">
+    <div class="profile-page-content" >
+        <h4 class="product-details">Name: {{customer.name}}</h4>
+        <h4 class="product-details">Date of Birth:{{customer.dob}}</h4>
+        <h4 class="product-details">Gender:{{customer.gender}}</h4>
+        <h4 class="product-details">Address: {{customer.address}}</h4>
+        <h4 class="product-details">Mobile No: {{customer.mob}}</h4>
+        <h4 class="product-details">Mail Id:{{customer.mailid}}</h4>
+    </div>
+    <div class="pt-3 product-details-button">
+        <button class="btn bg-dark text-white ms-2" (click)="onSubmit(customer.cid)">Update</button>
+    </div>
+    <br>
+</div>
+   <br>
+ </div>
+
+ <app-footer></app-footer>

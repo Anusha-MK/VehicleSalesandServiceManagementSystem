@@ -1,0 +1,22 @@
+<app-header></app-header>
+<br><br>
+<div class="bg-dark">
+<div class="product-page-container">
+    <h3 class="product-brand pt-5 text-white"> Congratulations {{customer.name}}!!  </h3>
+    <h3 class="product-brand p-3 text-white"> Your order has been placed sucessfully!! </h3>
+    <div class="container bg-light p-5">
+        <div class="row" style="width: 60;">
+            <div class="col">    
+                <h5><i class=" col-2 bi bi-geo-alt-fill"> </i>{{customer.address}}</h5>
+                <h5><i class="col-2 bi bi-telephone-fill"> </i>{{customer.mob}} </h5>
+                <h5><i class="col-2 bi bi-envelope-fill"> </i>{{customer.mailid}}</h5>
+            </div>
+            <div class="col">    
+               <h5>OrderId: {{oid}}</h5>
+               <h5>Total: {{total | currency :'INR':true}}</h5>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<app-footer></app-footer>

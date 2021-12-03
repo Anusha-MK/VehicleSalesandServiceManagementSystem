@@ -1,0 +1,48 @@
+<app-header></app-header>
+  
+  
+<div class="bg-dark">
+<br>
+
+<!-- <div class="input-group mb-3 d-flex mt-5">
+    <input type="text" class="form-control me-2" placeholder="search" [(ngModel)]="searchTerm" />
+    <!-- <div class="bg-light">
+        <h5>{{searchTerm}}</h5>
+    </div> 
+    <div class="input-group-prepend">
+        <span class="input-group-text bg-dark text-white"> <i class="bi bi-search"></i> </span>
+    </div>
+</div> -->
+
+
+<div class=" pt-5 ms-5">
+    <div *ngIf="products">
+        <div class="card-group me-5">
+            <div *ngFor="let product of products">
+                <div class="card mb-3 m-2" >
+                    <div class="image-container">
+                        <img src="{{product.imgurl}}" class="card-img-top" style="width: 22rem;height: 18rem;" alt="...">  
+                    <div class="overlay">
+                        <div class="button button-primary bg-light border border-dark rounded" [routerLink]="['/products', product.vehid]">View Details</div>
+                        <div class="button button-primary bg-light border border-dark rounded" (click)="addToCart(product)">Add To Cart</div> 
+                    </div> 
+                    </div>
+                    <div class="card-body text-center justify-content-center">
+                        <div class="product-brand">Brand: {{product.brand}}</div>
+                        <div class="product-brand">Model: {{product.model}}</div>
+                        <!-- <div class="product-title">Vehicle Number: {{product.vno}}</div>
+                        <div class="product-title">Date of Purchase: {{product.dop}}</div>
+                        <div class="product-title">Registration State: {{product.regstate}}</div>
+                        <div class="product-title">Kilometres Driven: {{product.kmdriven}}</div> -->
+                        <div class="product-price">Price: {{product.price | currency :'INR':true }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<app-footer></app-footer>
+ 

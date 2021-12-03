@@ -1,0 +1,42 @@
+<app-header></app-header>
+  
+  
+<br><br>
+<div class="bg-dark">
+<div *ngIf="product" class="product-page">
+    <div class="product-page-container">
+        <ol class="product-breadcrumbs">
+            <li class="breadcrumb-item text-white"><a routerLink="/">Home</a></li>
+            <li class="breadcrumb-item text-white"><a routerLink="/products">Products</a></li>
+            <li class="breadcrumb-item text-white">{{product.model}}</li>
+        </ol>
+        <div class="row">
+            <div class="col-md-8">
+                <img src="{{product.imgurl}}" style="width: 45rem;height: 35rem;" alt="...">
+            </div> 
+            <div class="col-md-4">
+                <div class="product-details-row">
+                    <div class="product-brand">{{product.brand}}</div>
+                        <div class="product-title">{{product.model}}</div>
+                        <div class="product-details p-3">
+                            Vehicle Number: {{product.vno}} <br>
+                            Date of Purchase: {{product.dop}} <br>
+                            Registration State: {{product.regstate}} <br>
+                            Kilometres Driven: {{product.kmdriven}} <br>
+                        </div>
+                        
+                        <div class="product-price">Price: {{product.price | currency :'INR':true }}</div>
+                </div>
+                <div class="product-details-button">
+                    <div class="btn bg-dark text-white ms-2" (click)="addToCart(product)" >Add to cart</div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+</div><br><br>
+</div>
+
+
+<app-footer></app-footer>
+

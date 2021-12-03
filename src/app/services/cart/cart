@@ -1,0 +1,49 @@
+import { Injectable } from '@angular/core';
+import { Vehicle } from '../vehicles/vehicle';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class CartService {
+  cart: Vehicle[] = [];
+  item:Vehicle;
+
+  constructor() { }
+
+  addToCart(product: Vehicle) {
+    this.cart.push(product);
+  }
+
+  getItems() {
+    return this.cart;
+  }
+
+  clearCart() {
+    this.cart = [];
+    return this.cart;
+  }
+
+  removeItem(item:any) {
+    this.cart.splice(this.cart.indexOf(item), 1);
+  }
+
+  getTotalPrice() : number{
+    let grandTotal = 0;
+    this.cart.map((a:any)=>{
+      grandTotal += a.price;
+    })
+    return grandTotal;
+  }
+
+  getTotalItems(): number{
+    let itemsTotal = 0;
+    this.cart.map((a:any)=>{
+       itemsTotal = itemsTotal + 1;
+     })
+    return itemsTotal;
+  }
+
+  //services cart
+
+}
+

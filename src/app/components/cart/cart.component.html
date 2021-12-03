@@ -1,0 +1,77 @@
+<app-header></app-header>
+
+<div class="cart-page-container">
+    <div class="cart-page-header">
+        <h1 class="text-white">Shopping Cart</h1>
+    </div>
+    <div class="cart-page-content" *ngIf="cart.length>0">
+        <div class="cart-item-header cart-item-row">
+            <div class="cart-item-cell cart-item-product"><span>Product</span></div>
+            <div class="cart-item-cell cart-item-total"><span>Total</span></div>
+            <div class="cart-item-cell cart-item-action"><span>Action</span></div>
+        </div>
+        <div class="cart-item-row" *ngFor="let item of cart;let i = index">
+            <div class="cart-item-cell cart-item-product">
+                <div class="cart-item-info">
+                    <div class="cart-item-brand">{{item.brand}}</div>
+                    <div class="cart-item-title">{{item.model}}</div>
+                    <div class="cart-item-title">{{item.sname}}</div>
+                </div>
+                <div class="cart-item-cell cart-item-total pe-5 me-5">
+                    <div class="item-price">
+                        {{item.price | currency :'INR':true }}
+                        {{item.cost | currency :'INR':true }}
+                    </div>
+                </div>
+                <div class="cart-item-cell cart-item-action">
+                    <div class="item-remove" (click)="removeItem(item)">X</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row cart-total">
+            <div class="col-lg-offset-6">
+                <div class="cart-total-row row">
+                    <div class="col-md-6 cart-total-label">
+                        Cart overview
+                    </div>
+                    <div class="col-md-6 cart-total-value"></div>
+                </div>
+                <div class="cart-total-row row">
+                    <div class="col-md-6 cart-total-label">
+                        Total Quantity
+                    </div>
+                    <div class="col-md-6 cart-total-value">
+                        {{itemsTotal}}
+                    </div>
+                </div>
+                <div class="cart-total-row row">
+                    <div class="col-md-6 cart-total-label">
+                        Total Price
+                    </div>
+                    <div class="col-md-6 cart-total-value cart-total-price">
+                        {{grandTotal | currency :'INR':true }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cart-buttons">
+            <div class="continue-shopping"><a routerLink="/products">Continue Shopping</a></div>
+            <form (ngSubmit)="onSubmit()">
+                <button class="checkout-button btn btn-lg bg-dark text-white">Check Out</button>
+            </form>
+        </div>
+
+    </div>
+
+    <div class="cart-page-content" *ngIf="cart.length == 0">
+        <h4>Your cart is empty.</h4>
+        <div style="text-decoration: none;" [ngStyle]="{'color':'black'}">
+            <a routerLink="/products">Go shopping</a>
+        </div>
+    </div>
+    <br>
+</div>
+
+
+<app-footer></app-footer>

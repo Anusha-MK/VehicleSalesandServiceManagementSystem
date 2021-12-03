@@ -1,0 +1,50 @@
+<div style="color: black;">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" >
+    <div class="container-fluid">
+      <a class="navbar-brand ps-5 pe-5" href="#">  CarZ </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ps-5 d-flex">
+          <li class="nav-item ms-5">
+            <a class="nav-link active" aria-current="page" routerLink="/home"><i class="bi bi-house-fill"></i> Home</a>
+          </li>
+          <li class="nav-item ms-5">
+            <a class="nav-link" routerLink="/products"><i class="bi bi-lightning-charge-fill"></i>Buy</a>
+          </li>
+          <li class="nav-item ms-5">
+            <a class="nav-link" routerLink="/sell"><i class="bi bi-building"></i>Sell</a>
+          </li>
+          <li class="nav-item ms-5">
+            <a class="nav-link" routerLink="/services"><i class="bi bi-gear-wide-connected"></i>Services</a>
+          </li>
+          <li class="nav-item ms-5 me-5">
+            <a class="nav-link" routerLink="/contact"><i class="bi bi-telephone-fill"></i>Contact Us</a>
+          </li>
+          
+          <!-- <li class="nav-item ms-5">
+            <a class="nav-link" style="font-display: 20px;" routerLink="./login"><i class="bi bi-box-arrow-in-right"></i>Login</a>
+          </li> -->
+  
+        </ul>
+        
+      </div>
+      
+      <li class="d-flex me-2">
+        <a [ngStyle]="{'color':'white'}" class="nav-link" routerLink="/profile"><i class="bi bi-person-fill"></i></a>
+      </li>
+      <li class="d-flex">
+        <a [ngStyle]="{'color':'white'}" class="nav-link" routerLink="/cart"><i class="bi bi-cart-fill"></i></a>
+        <!-- <div style="font-size: 15px;" class="badge bg-danger">{{itemsTotal}}</div> -->
+      </li>
+      <li class="d-flex">
+        <a [ngStyle]="{'color':'white'}" class="nav-link" routerLink="/index"><i class="bi bi-box-arrow-in-right"></i></a>
+      </li>
+    </div>
+  </nav>
+</div>
+  
+  
+  
+  
